@@ -21,7 +21,7 @@
 }
 .input-box{
     width: 400px;
-    height: 60px;
+    height: 55px;
     position: relative;
     border: 2px solid #fff;
     border-radius: 5px;
@@ -37,7 +37,7 @@
     border: none;
 }
 .input-box input::placeholder{
-    font-size: 16px;
+    font-size: 15px;
 }
 .input-box button{
     position: absolute;
