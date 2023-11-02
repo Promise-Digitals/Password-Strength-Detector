@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Strength Indicator</title>
+</head>
+<body>
+    <div class="container">
+        <img src="/images/logo 1.png" class="logo">
+        <div class="input-box" id="input-box">
+            <input type="password" name="" id="password" placeholder="Password">
+            <button type="submit" id="submit"><img src="/images/arrow.png" alt=""></button>
+            <p id="message">Password is <span id="Strength"></span></p>
+        </div>
+    </div>
+    <script>
+        let inputBox = document.getElementById("input-box");
+        let pass = document.getElementById("password");
+        let submit = document.getElementById("submit");
+        let msg = document.getElementById("message");
+        let str = document.getElementById("Strength");
+
+        pass.addEventListener("input", function(){
+            if (pass.value.length > 0){
+                msg.style.display = "block";
+            }
+            else{
+                msg.style.display = "none";
+            }
+            
+            if(pass.value.length < 4){
+                str.innerHTML = "Weak";
+                msg.style.color = "red";
+                inputBox.style.borderColor = "red";
+                submit.style.background = "red";
+            }
+            else if(pass.value.length >= 4 && pass.value.length < 8){
+                str.innerHTML = "Medium";
+                msg.style.color = "yellow";
+                inputBox.style.borderColor = "yellow";
+                submit.style.background = "yellow";
+            }
+            else if(pass.value.length >= 8){
+                str.innerHTML = "Strong";
+                msg.style.color = "green";
+                inputBox.style.borderColor = "green";
+                submit.style.background = "green";
+            }
+        })
+        
+    </script>
+</body>
+</html>
