@@ -8,13 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <img src="/images/logo-2.png" class="logo">
+        <img src="/images/logo.png" class="logo">
         <div class="input-box" id="input-box">
             <input type="password" name="" id="password" placeholder="Password">
             <button type="submit" id="submit"><img src="/images/arrow.png" alt=""></button>
             <p id="message">Password is <span id="Strength"></span></p>
         </div>
     </div>
+
+
+
     <script>
         let inputBox = document.getElementById("input-box");
         let pass = document.getElementById("password");
@@ -30,7 +33,12 @@
                 msg.style.display = "none";
             }
             
-            if(pass.value.length < 4){
+            if(pass.value.length === 0){
+                msg.style.color = "#6660ff";
+                inputBox.style.borderColor = "#6660ff";
+                submit.style.background = "#6660ff";
+            }
+            else if(pass.value.length < 4){
                 str.innerHTML = "Weak";
                 msg.style.color = "red";
                 inputBox.style.borderColor = "red";
